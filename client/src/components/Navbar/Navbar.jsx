@@ -1,4 +1,5 @@
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,14 +9,16 @@ const Navbar = () => {
           <img src="../public/favicon.png" alt="logo" />
           <span>KonutPazar</span>
         </a>
-        <a href="#">Home</a>
+        <Link to={"/"}>Home</Link>
         <a href="#">About</a>
         <a href="#">Contact</a>
         <a href="#">Agents</a>
       </div>
       <div className="right">
         <a href="#">Login</a>
-        <a href="#">Register</a>
+        <a href="#" className="register">
+          Register
+        </a>
       </div>
     </nav>
   );
