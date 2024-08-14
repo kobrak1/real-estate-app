@@ -1,0 +1,23 @@
+nav{
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left{
+    flex: 3;
+
+    .logo{
+      font-weight: bold;
+      font-size: 2rem;
+      display: flex;
+
+      img{
+        width: 2rem;
+      }
+    }
+  }
+  .right{
+    flex: 2;
+  }
+}
