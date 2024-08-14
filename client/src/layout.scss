@@ -1,24 +1,24 @@
 @import './responsive.scss';
 
 .layout {
-  background-color: azure;
+  background-color: #ff9671;
   height: 100vh;
-  max-width: 1336px;
+  max-width: 133.6rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   @include lg{
-    background-color: green;
-    max-width: 1280px;
+    background-color: rgb(255, 150, 113, .2);
+    max-width: 128rem;
   }
   @include md{
-    background-color: coral;
-    max-width: 768px;
+    background-color: rgb(255, 199, 95);
+    max-width: 76.8rem;
   }
   @include sm{
-    background-color: red;
-    max-width: 640px;
+    background-color: rgb(249, 248, 113, .2);
+    max-width: 64rem;
   }
 }
