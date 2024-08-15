@@ -5,20 +5,30 @@ const Navbar = () => {
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
+        <Link to={"/"} className="logo">
           <img src="../public/favicon.png" alt="logo" />
           <span>KonutPazar</span>
-        </a>
-        <Link to={"/"}>Home</Link>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Agents</a>
+        </Link>
+        <ul>
+          <li>
+            <Link to={"#"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"#"}>About</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Contact</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Agents</Link>
+          </li>
+        </ul>
       </div>
       <div className="right">
-        <a href="#">Login</a>
-        <a href="#" className="register">
+        <Link to={"#"}>Login</Link>
+        <Link to={"#"} className="register">
           Register
-        </a>
+        </Link>
       </div>
     </nav>
   );
