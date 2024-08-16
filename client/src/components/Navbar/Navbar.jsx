@@ -1,7 +1,10 @@
-import "./navbar.scss";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.scss";
 
 const Navbar = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <nav>
       <div className="left">
@@ -25,10 +28,40 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right">
-        <Link to={"#"}>Login</Link>
-        <Link to={"#"} className="register">
-          Register
-        </Link>
+        <span>
+          <Link to={"#"} className="login">
+            Login
+          </Link>
+          <Link to={"#"} className="register">
+            Register
+          </Link>
+        </span>
+        <div className="menu-icon">
+          <img
+            src="../../../public/menu.png"
+            onClick={() => setOpened(!opened)}
+          />
+        </div>
+        <ul className={opened ? "menu active" : "menu"}>
+          <li>
+            <Link to={"#"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"#"}>About</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Contact</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Agents</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Login</Link>
+          </li>
+          <li>
+            <Link to={"#"}>Register</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
