@@ -6,7 +6,22 @@
     flex: 3;
 
     .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
       padding-right: 100px;
+      height: 100%;
+
+      .title {
+        font-size: 100px;
+      }
+
+      // boxes container with InfoBox components
+      .boxes {
+        diplay: flex;
+        justify-content: space-between;
+      }
     }
   }
 

@@ -1,3 +1,8 @@
 .info-box {
   display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-weight: 100;
+  }
 }
