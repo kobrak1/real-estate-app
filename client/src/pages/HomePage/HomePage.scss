@@ -14,12 +14,12 @@
       height: 100%;
 
       .title {
-        font-size: 100px;
+        font-size: 64px;
       }
 
       // boxes container with InfoBox components
       .boxes {
-        diplay: flex;
+        display: flex;
         justify-content: space-between;
       }
     }

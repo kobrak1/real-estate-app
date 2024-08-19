@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-          <h1 className="title">Unlock the Door to Your New Property</h1>
+          <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Interdum nisi
             tempus eget pulvinar quisque tempor. Nulla class a et nibh mauris
