@@ -1,7 +1,11 @@
+// 1rem = 10px
+// 1rem = 10px
+// 1rem = 10px
+
 @import "../../responsive.scss";
 
 nav{
-  height: 100px;
+  height: 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,8 +41,13 @@ nav{
       }
 
       img{
+<<<<<<< HEAD
         width: 4rem;
         margin-right: 5px;
+=======
+        width: 4.8rem;
+        margin-right: .5rem;
+>>>>>>> origin/main
       }
     }
 
@@ -46,8 +55,8 @@ nav{
       display: flex;
       flex: 2;
       list-style-type: none;
-      gap: 20px;
-      font-size: 12px;
+      gap: 2rem;
+      font-size: 1.2rem;
 
       @include sm{
         display: none;
@@ -64,9 +73,15 @@ nav{
 
     // Link components and a tags
     a {
+<<<<<<< HEAD
       font-size: 1.4rem;
       margin: 2rem;
       padding: 1rem;
+=======
+      margin: 2rem;
+      padding: 1rem;
+      font-size: 1.6rem;
+>>>>>>> origin/main
     }
     
     // disappear bg-color when medium size
@@ -82,7 +97,7 @@ nav{
       
       .register{
         background-color: #fece51;
-        border-radius: 3px;
+        border-radius: .3rem;
       }
 
       // do not show this span in small screens
@@ -96,7 +111,7 @@ nav{
       z-index: 999;
       
       img{
-        width: 36px;
+        width: 3.6rem;
         cursor: pointer;
       }
 
@@ -105,6 +120,7 @@ nav{
       }
     } 
 
+    // side menu when the screen becomes small-sized
     .menu{
       display: flex;
       flex-direction: column;
@@ -115,10 +131,11 @@ nav{
       right: -50%;
       height: 100vh;
       width: 50%;
+      gap: 3rem;
       background-color: black;
       transition: all .5s ease;
       color: white;
-      font-size: 20px;
+      font-size: 2rem;
 
       &.active {
         right: 0;
