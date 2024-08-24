@@ -9,7 +9,7 @@ nav{
   // apply all the li elements
   li {
     transition: all 0.4s ease;
-    font-size: 1rem;
+    font-size: 1.4rem;
 
     @include sm {
       display: none;
@@ -33,11 +33,11 @@ nav{
       font-weight: bold;
 
       span{
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
 
       img{
-        width: 3rem;
+        width: 4rem;
         margin-right: 5px;
       }
     }
@@ -64,8 +64,9 @@ nav{
 
     // Link components and a tags
     a {
-      margin: 20px;
-      padding: 10px;
+      font-size: 1.4rem;
+      margin: 2rem;
+      padding: 1rem;
     }
     
     // disappear bg-color when medium size

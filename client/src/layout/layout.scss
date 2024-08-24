@@ -1,4 +1,4 @@
-@import './responsive.scss';
+@import '../responsive.scss';
 
 .layout {
   display: flex;
@@ -14,12 +14,12 @@
     //background-color: rgb(255, 150, 113, .2);
     max-width: 1280px;
   }
-  
+
   @include md{
     //background-color: rgb(255, 199, 95);
     max-width: 768px;
   }
-  
+
   @include sm{
     //background-color: rgb(249, 248, 113, .2);
     max-width: 640px;
