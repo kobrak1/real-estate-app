@@ -1,5 +1,6 @@
-import Layout from "./layout/layout";
+import Layout from "./pages/layout/layout";
 import HomePage from "./pages/HomePage/HomePage";
+import SinglePage from "./pages/SinglePage/SinglePage";
 import ListPage from "./pages/ListPage/ListPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -16,6 +17,10 @@ const App = () => {
         {
           path: "/list",
           element: <ListPage />,
+        },
+        {
+          path: "/:id",
+          element: <SinglePage />,
         },
       ],
     },
