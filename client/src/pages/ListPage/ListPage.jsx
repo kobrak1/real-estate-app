@@ -1,11 +1,15 @@
-import "./ListPage.scss"
+import { listData } from "../../lib/dummyData";
+import "./ListPage.scss";
 
 const ListPage = () => {
-  return (
-    <div>
-      Gello weoueğjfis
-    </div>
-  )
-}
+  const data = listData;
 
-export default ListPage
+  return (
+    <div className="listPage">
+      <div className="listContainer">Burak</div>
+      <div className="mapContainer">Turkey</div>
+    </div>
+  );
+};
+
+export default ListPage;
