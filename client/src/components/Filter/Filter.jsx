@@ -14,7 +14,7 @@ const Filter = () => {
       </h1>
       <div className="top">
         <div className="item">
-          <label htmlFor="location">location</label>
+          <label htmlFor="location">Location</label>
           <input
             type="text"
             name="location"
@@ -27,7 +27,7 @@ const Filter = () => {
       </div>
       <div className="bottom">
         <div className="item">
-          <label htmlFor="type">location</label>
+          <label htmlFor="type">Location</label>
           <select name="type" id="type">
             <option value={""}>any</option>
             <option value={"buy"}>buy</option>
