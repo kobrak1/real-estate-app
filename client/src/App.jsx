@@ -26,7 +26,6 @@ const App = () => {
     //   </div>
     // </div>
     <>
-      <Navbar />
       <RouterProvider router={router} />
     </>
   )
