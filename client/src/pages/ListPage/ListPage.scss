@@ -1,0 +1,29 @@
+@import "../../styles/responsive.scss";
+
+.listPage {
+  display: flex;
+  height: 100%;
+
+  .listContainer {
+    flex: 3;
+    height: 100%;
+
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      padding: 0 5rem 5rem 0;
+      overflow-y: scroll;
+      height: 100%;
+      gap: 5rem;
+    }
+  }
+  .mapContainer {
+    flex: 2;
+    height: 100%;
+    background-color: #fcf5f3;
+
+    @include md{
+      display: none;
+    }
+  }
+}
