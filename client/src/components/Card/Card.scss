@@ -1,4 +1,4 @@
-@import "../../responsive.scss";
+@import "../../styles/responsive.scss";
 
 .card {
   display: flex;
@@ -100,9 +100,10 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: all .6s ease;
 
           &:hover {
-            background-color: lightgray;
+            background: linear-gradient(to bottom right, #FFF5E4 40%, #fece50 100%);
           }
         }
       }

@@ -2,7 +2,7 @@
 // 1rem = 10px
 // 1rem = 10px
 
-@import "../../responsive.scss";
+@import "../../styles/responsive.scss";
 
 nav{
   height: 10rem;
@@ -50,7 +50,7 @@ nav{
       display: flex;
       flex: 2;
       list-style-type: none;
-      gap: 2rem;
+      gap: 5rem;
       font-size: 1.2rem;
 
       @include sm{
