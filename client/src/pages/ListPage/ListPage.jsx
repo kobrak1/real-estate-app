@@ -1,6 +1,6 @@
-import Card from "../../components/Card/Card";
-import Filter from "../../components/Filter/Filter";
-import Map from "../../components/Map/Map";
+import Card from "../../components/Card/Card.jsx";
+import Filter from "../../components/Filter/Filter.jsx";
+import Map from "../../components/Map/Map.jsx";
 import { listData } from "../../lib/dummyData";
 import "./ListPage.scss";
 

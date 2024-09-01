@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav>
       <div className="left">
         <Link to={"/"} className="logo">
-          <img src="../public/favicon.png" alt="logo" />
+          <img src="/favicon.png" alt="logo" />
           <span>KonutPazar</span>
         </Link>
         <ul>
@@ -38,7 +38,7 @@ const Navbar = () => {
         </span>
         <div className="menu-icon">
           <img
-            src="../../../public/menu.png"
+            src="/menu.png"
             onClick={() => setOpened(!opened)}
           />
         </div>

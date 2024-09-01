@@ -71,7 +71,7 @@ const Filter = () => {
           <input type="text" id="bedroom" name="bedroom" placeholder="any" />
         </div>
         <button>
-          <img src="../../public/search.png" alt="" />
+          <img src="/search.png" alt="" />
         </button>
       </div>
     </div>

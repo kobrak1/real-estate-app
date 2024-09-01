@@ -1,5 +1,5 @@
-import InfoBox from "../../components/InfoBox/InfoBox";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import InfoBox from "../../components/InfoBox/InfoBox.jsx";
+import SearchBar from "../../components/SearchBar/SearchBar.jsx";
 import "./HomePage.scss";
 
 function HomePage() {
