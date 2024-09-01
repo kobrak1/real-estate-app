@@ -4,7 +4,7 @@ import "./Card.scss";
 const Card = ({ item }) => {
   return (
     <div className="card">
-      <Link to={`/{item.id}`} className="image-container">
+      <Link to={`/${item.id}`} className="image-container">
         <img src={item.img} alt="img not found" />
       </Link>
       <div className="text-container">
@@ -12,7 +12,7 @@ const Card = ({ item }) => {
           <Link to={`/{item.id}`}>{item.title}</Link>
         </h2>
         <p className="address">
-          <img src="../../public/pin.png" alt="icon not found" />
+          <img src="/pin.png" alt="icon not found" />
           <span>{item.address}</span>
         </p>
         <p className="price">$ {item.price}</p>

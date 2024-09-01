@@ -1,7 +1,7 @@
-import Layout from "./pages/layout/layout";
-import HomePage from "./pages/HomePage/HomePage";
-import SinglePage from "./pages/SinglePage/SinglePage";
-import ListPage from "./pages/ListPage/ListPage";
+import Layout from "./pages/layout/layout.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import SinglePage from "./pages/SinglePage/SinglePage.jsx";
+import ListPage from "./pages/ListPage/ListPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const App = () => {

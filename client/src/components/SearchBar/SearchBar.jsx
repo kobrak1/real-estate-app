@@ -66,7 +66,7 @@ const SearchBar = () => {
           placeholder="Max Price"
         />
         <button type="submit">
-          <img src="../../../public/search.png" alt="search_icon_not_found" />
+          <img src="/search.png" alt="search_icon_not_found" />
         </button>
       </form>
     </div>
