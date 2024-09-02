@@ -11,6 +11,7 @@
     "build:profile": "vite build --profile"
   },
   "dependencies": {
+    "antd": "^5.20.3",
     "leaflet": "^1.9.4",
     "promise-polyfill": "8.3.0",
     "react": "^18.3.1",
