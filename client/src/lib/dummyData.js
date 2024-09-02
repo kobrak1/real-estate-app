@@ -110,7 +110,7 @@ export const singlePostData = {
   bus: "100m away",
   restaurant: "50m away",
   description:
-    "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+    "This modern apartment building offers a perfect blend of comfort and convenience, situated in a vibrant neighborhood. The building features spacious units with contemporary finishes, large windows that flood the interiors with natural light, and balconies with stunning views. Residents can enjoy top-notch amenities, including a fully equipped fitness center, a rooftop terrace, and secure underground parking. With easy access to public transportation, shopping centers, and dining options, this property is ideal for those seeking an urban lifestyle with all the comforts of home.",
 };
 
 export const userData = {

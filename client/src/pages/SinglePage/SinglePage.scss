@@ -1,58 +1,114 @@
+@import "../../styles/responsive.scss";
+
 .single-page {
-    display: flex;
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
     height: 100%;
+    overflow-y: scroll;
 
-    .details {
-        flex: 3;
+    @include md {
+        flex: none;
+        height: max-content;
+        margin-bottom: 50px;
+      }
 
-        .wrapper {
-            padding-right: 5rem;
+    .wrapper {
+      padding-right: 5rem;
 
-            .info {
+      @include lg {
+        padding-right: 20px;
+      }
+      @include md {
+        padding-right: 0px;
+      }
 
-                .top {
-                    display: flex;
-                    justify-content: space-between;
-                    height: 13rem;
+      .info {
+        margin-top: 5rem;
+        
+        .top {
+          display: flex;
+          justify-content: space-between;
 
-                    .post {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        height: 100%;
+          @include sm {
+            flex-direction: column;
+            gap: 2rem;
+          }
 
-                        h1 {
-                            font-size: 3.2rem;
-                            font-weight: 400;
-                        }
-                        .address {
-                            display: flex;
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
-                            img {
-                                width: 1.6rem;
-                            }
-                        }
-                    }
-
-                    .user {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 2rem;
-
-                        img {
-                            width: 5rem;
-                            height: 5rem;
-                            border-radius: 50%;
-                            object-fit: cover;
-                        }
-                    }
-                }
+            h1 {
+              font-size: 3.2rem;
+              font-weight: 400;
             }
+            .address {
+              display: flex;
+              font-size: 1.4rem;
+              color: #888;
+              gap: .7rem;
+
+              img {
+                width: 1.6rem;
+              }
+            }
+
+            .price {
+              font-size: 2rem;
+              font-weight: 300;
+              width: max-content;
+              border-radius: 5px;
+              padding: 5px;
+              background-color: rgba(254, 205, 81, .45);
+              color: rgb(96, 96, 92);
+            }
+          }
+
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5rem;
+            border-radius: 1rem;
+            background-color: rgba(254, 205, 81, .35);
+            gap: 2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+
+            @include sm {
+                padding: 2rem 5rem;
+            }
+
+            img {
+              width: 5rem;
+              height: 5rem;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
         }
+
+        .bottom {
+            font-size: 1.6rem;
+            margin-top: 50px;
+            color: #555;
+            line-height: 20px;
+        }
+      }
     }
-    .features {
-        flex: 2; 
-        background-color: #fcf5f3;
-    }
+  }
+  .features {
+    flex: 2;
+    background-color: #fcf5f3;
+  }
 }
