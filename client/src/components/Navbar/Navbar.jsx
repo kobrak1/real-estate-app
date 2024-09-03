@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav>
       <div className="left">
         <Link to={"/"} className="logo">
-          <img src="/favicon.png" alt="logo" />
+          <img src="/favicon2.png" alt="logo" />
           <span>KonutPazar</span>
         </Link>
         <ul>
