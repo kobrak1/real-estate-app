@@ -1,4 +1,4 @@
-import Slider from "../../components/Slider/Slider.jsx"
+import ImageSlider from "../../components/ImageSlider/ImageSlider.jsx"
 import "./SinglePage.scss";
 import { singlePostData, userData } from "../../lib/dummyData.js"
 
@@ -7,7 +7,7 @@ const SinglePage = () => {
     <div className="single-page">
       <div className="details">
         <div className="wrapper">
-          <Slider images={singlePostData.images}/>
+          <ImageSlider images={singlePostData.images}/>
           <div className="info">
             <div className="top">
               <div className="post">
