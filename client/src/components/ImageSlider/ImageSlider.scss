@@ -6,7 +6,13 @@
   height: 35rem;
   gap: 2rem;
 
-
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
 
   .big-image {
     flex: 3;
