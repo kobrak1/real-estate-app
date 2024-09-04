@@ -30,7 +30,7 @@ const ImageSlider = ({ images = [] }) => {
         centered // Center the modal
         width="120rem"
         styles={{
-          body: { height: "80rem"},
+          body: { height: "85%", padding: "1rem"},
         }}
       >
         <Slider {...settings}>
@@ -39,7 +39,7 @@ const ImageSlider = ({ images = [] }) => {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
-                style={{ width: "100%", height: "75rem" }}
+                style={{ width: "100%", height: "60rem" }}
               />
             </div>
           ))}
