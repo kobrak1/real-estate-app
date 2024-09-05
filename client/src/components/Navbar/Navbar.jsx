@@ -37,10 +37,12 @@ const Navbar = () => {
           </Link>
         </span>
         <div className="menu-icon">
-          <img
-            src="/menu.png"
+          <button
             onClick={() => setOpened(!opened)}
-          />
+            aria-label={opened ? "Close menu" : "Open menu"}
+          >
+            <img src="/menu.png" alt="" />
+          </button>
         </div>
         <ul className={opened ? "menu active" : "menu"}>
           <li>
