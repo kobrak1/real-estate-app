@@ -7,7 +7,7 @@ nav{
   align-items: center;
 
   li {
-    transition: all 0.4s ease;
+    transition: all 0.2s ease;
     font-size: 1.4rem;
 
     @include sm {
@@ -15,7 +15,10 @@ nav{
     }
 
     &:hover {
-      scale: 1.05;
+      background: linear-gradient(45deg, black, #ff9d00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      scale: 1.2;
     }
   }
 
