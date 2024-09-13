@@ -35,7 +35,7 @@ const SinglePage = () => {
         <div className="wrapper">
           <p className="title">General</p>
           <div className="listVertical">
-            <Feature
+            <Feature  
               src="/utility.png"
               alt="utility img not found"
               title="Utility"
