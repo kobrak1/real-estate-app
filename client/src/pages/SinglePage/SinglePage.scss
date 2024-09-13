@@ -15,10 +15,10 @@
     overflow-y: scroll;
 
     @include md {
-        flex: none;
-        height: max-content;
-        margin-bottom: 50px;
-      }
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
 
     .wrapper {
       padding-right: 5rem;
@@ -32,7 +32,7 @@
 
       .info {
         margin-top: 5rem;
-        
+
         .top {
           display: flex;
           justify-content: space-between;
@@ -55,7 +55,7 @@
               display: flex;
               font-size: 1.4rem;
               color: #888;
-              gap: .7rem;
+              gap: 0.7rem;
 
               img {
                 width: 1.6rem;
@@ -68,7 +68,7 @@
               width: max-content;
               border-radius: 5px;
               padding: 5px;
-              background-color: rgba(254, 205, 81, .45);
+              background-color: rgba(254, 205, 81, 0.45);
               color: rgb(96, 96, 92);
             }
           }
@@ -80,13 +80,13 @@
             justify-content: center;
             padding: 0 5rem;
             border-radius: 1rem;
-            background-color: rgba(254, 205, 81, .35);
+            background-color: rgba(254, 205, 81, 0.35);
             gap: 2rem;
             font-size: 1.6rem;
             font-weight: 600;
 
             @include sm {
-                padding: 2rem 5rem;
+              padding: 2rem 5rem;
             }
 
             img {
@@ -99,10 +99,10 @@
         }
 
         .bottom {
-            font-size: 1.6rem;
-            margin-top: 50px;
-            color: #555;
-            line-height: 20px;
+          font-size: 1.6rem;
+          margin-top: 50px;
+          color: #555;
+          line-height: 20px;
         }
       }
     }
@@ -110,5 +110,70 @@
   .features {
     flex: 2;
     background-color: #fcf5f3;
+
+    .wrapper {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin: 0 0 .5rem .5rem;
+        color: #555;
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: #f4e1db;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .sizes {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f4e1db;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        margin-bottom: 2rem;
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          
+          span {font-size: 1.2rem;}
+        }
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f4e1db;
+        padding: 1.5rem;
+        border-radius: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 20rem;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0 2rem 0;
+      }
+    }
   }
 }
