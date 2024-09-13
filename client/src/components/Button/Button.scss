@@ -1,0 +1,19 @@
+.custom-button {
+  display: flex;
+  align-items: center;
+  border: 1px solid #888;
+  background-color: #f9dd9d;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  img {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  &:active {
+    background-color: #fcfcfc;
+  }
+}
