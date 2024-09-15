@@ -15,7 +15,9 @@ function HomePage() {
             repellat provident impedit!
           </p>
           <SearchBar />
-          <InfoBox />
+          <div className="infobox-container">
+            <InfoBox />
+          </div>
         </div>
       </div>
       <div className="imgContainer">
