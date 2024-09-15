@@ -4,6 +4,7 @@ import "./navbar.scss";
 
 const Navbar = () => {
   const [opened, setOpened] = useState(false);
+  const user = true;
 
   return (
     <nav>
@@ -28,14 +29,28 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right">
-        <span>
-          <Link to={"#"} className="login">
-            Login
-          </Link>
-          <Link to={"#"} className="register">
-            Register
-          </Link>
-        </span>
+        {user ? (
+          <div className="user">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="user img not found"
+            />
+            <span>John Doe</span>
+            <Link to={"/profile"} className="profile-button">
+              <div className="notification">5</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <span>
+            <Link to={"#"} className="login">
+              Login
+            </Link>
+            <Link to={"#"} className="register">
+              Register
+            </Link>
+          </span>
+        )}
         <div className="menu-icon">
           <button
             onClick={() => setOpened(!opened)}
