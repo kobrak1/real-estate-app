@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [opened, setOpened] = useState(false);
   const user = true;
+  const menuItems = [
+    { to: "/", label: "Home" },
+    { to: "#", label: "About" },
+    { to: "#", label: "Contact" },
+    { to: "#", label: "Agents" },
+  ]
+
+  const renderMenuItems = useMemo(() => (
+    menuItems.map(item => (
+      <li key={item.label}>
+        <Link to={item.to}>{item.label}</Link>
+      </li>
+    ))
+  ), [])
 
   return (
     <nav>
@@ -13,20 +27,7 @@ const Navbar = () => {
           <img src="/favicon2.png" alt="logo" />
           <span>KonutPazar</span>
         </Link>
-        <ul>
-          <li>
-            <Link to={"#"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"#"}>About</Link>
-          </li>
-          <li>
-            <Link to={"#"}>Contact</Link>
-          </li>
-          <li>
-            <Link to={"#"}>Agents</Link>
-          </li>
-        </ul>
+        <ul>{renderMenuItems}</ul>
       </div>
       <div className="right">
         {user ? (
