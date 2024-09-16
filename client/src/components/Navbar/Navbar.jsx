@@ -7,7 +7,7 @@ const Navbar = () => {
   const user = true;
   const menuItems = [
     { to: "/", label: "Home" },
-    { to: "#", label: "About" },
+    { to: "/", label: "About" },
     { to: "#", label: "Contact" },
     { to: "#", label: "Agents" },
   ]
