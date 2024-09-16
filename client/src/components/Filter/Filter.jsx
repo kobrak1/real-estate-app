@@ -2,10 +2,21 @@ import { useState } from "react";
 import "./Filter.scss";
 
 const Filter = () => {
-  const [location, setLocation] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [filters, setFilters] = useState({
+    location: "",
+    minPrice: "",
+    maxPrice: "",
+    propertyType: "",
+    transactionType: "",
+    bedroom: ""
+  });
   const [titleLocation, setTitleLocation] = useState("Istanbul");
+
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setFilters(prevFilters => ({ ...prevFilters, [name]: value }))
+  }
 
   return (
     <div className="filter">
@@ -20,7 +31,7 @@ const Filter = () => {
             name="location"
             id="location"
             value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={handleChange}
             placeholder="e.g. Istanbul"
           />
         </div>
@@ -50,8 +61,8 @@ const Filter = () => {
             type="text"
             id="minPrice"
             name="minPrice"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
+            value={filters.minPrice}
+            onChange={handleChange}
             placeholder="min. price"
           />
         </div>
@@ -61,8 +72,8 @@ const Filter = () => {
             type="text"
             id="maxPrice"
             name="maxPrice"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
+            value={filters.maxPrice}
+            onChange={handleChange}
             placeholder="max. price"
           />
         </div>
@@ -70,8 +81,8 @@ const Filter = () => {
           <label htmlFor="bedroom">Bedroom</label>
           <input type="text" id="bedroom" name="bedroom" placeholder="any" />
         </div>
-        <button>
-          <img src="/search.png" alt="" />
+        <button onClick={() => console.log('Search button has been clicked.')}>
+          <img src="/search.png" alt="search" />
         </button>
       </div>
     </div>
