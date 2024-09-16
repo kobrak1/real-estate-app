@@ -9,7 +9,7 @@ const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/", label: "About" },
     { to: "/profile", label: "Contact" },
-    { to: "#", label: "Agents" },
+    { to: "/list", label: "Agents" },
   ]
 
   const renderMenuItems = useMemo(() => (
