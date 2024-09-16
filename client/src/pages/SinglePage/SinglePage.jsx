@@ -84,8 +84,8 @@ const SinglePage = () => {
               desc="100m away"
             />
             <Feature
-              src="/fee.png"
-              alt="fee img not found"
+              src="/restaurant.png"
+              alt="restaurant img not found"
               title="Restaurant"
               desc="200m away"
             />
