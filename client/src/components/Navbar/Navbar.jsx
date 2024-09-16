@@ -8,7 +8,7 @@ const Navbar = () => {
   const menuItems = [
     { to: "/", label: "Home" },
     { to: "/", label: "About" },
-    { to: "#", label: "Contact" },
+    { to: "/profile", label: "Contact" },
     { to: "#", label: "Agents" },
   ]
 
