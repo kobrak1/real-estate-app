@@ -8,8 +8,8 @@ nav{
   align-items: center;
 
   li {
-    transition: all 0.2s ease;
     font-size: 1.8rem;
+    transition: all 0.2s cubic-bezier(.34,1.56,.64,1);
 
     @include sm {
       display: none;
