@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "./SearchBar.scss";
 
 const SearchBar = () => {
@@ -9,19 +9,25 @@ const SearchBar = () => {
     maxPrice: 0,
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setQuery({ ...query, [name]: value });
-  };
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target
+    // Sanitize input
+    const sanitizedValue = name === 'location'
+    ? value.replace(/[<>]/g, '')
+    : Math.max(0, Math.min(Number(value), 100000))
 
-  const handleSubmit = (e) => {
+    // Set sanitizedValue to query
+    setQuery((prevQuery) => ({ ...prevQuery, [name]: sanitizedValue }))
+  }, [])
+
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     try {
       console.log("Form Submitted Successfully");
     } catch (error) {
       console.error("Form Submission Failed:", error);
     }
-  };
+  }, [])
 
   return (
     <div className="searchBar">
