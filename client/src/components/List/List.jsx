@@ -1,5 +1,5 @@
 import './List.scss'
-import Card from"../card/Card"
+import Card from"../Card/Card"
 import {listData} from"../../lib/dummydata"
 
 const List = () => {
