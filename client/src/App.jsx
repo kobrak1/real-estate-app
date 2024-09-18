@@ -1,9 +1,14 @@
-import Layout from "./pages/layout/layout.jsx";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import SinglePage from "./pages/SinglePage/SinglePage.jsx";
-import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
-import ListPage from "./pages/ListPage/ListPage.jsx";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Mosaic } from "react-loading-indicators";
+import Layout from "./pages/layout/layout.jsx";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
+
+// Lazy load components
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const SinglePage = lazy(() => import("./pages/SinglePage/SinglePage.jsx"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage/ProfilePage.jsx"));
+const ListPage = lazy(() => import("./pages/ListPage/ListPage.jsx"));
 
 const App = () => {
   const router = createBrowserRouter([
@@ -25,16 +30,18 @@ const App = () => {
         },
         {
           path: "/profile",
-          element: <ProfilePage />
-        }
+          element: <ProfilePage />,
+        },
       ],
     },
   ]);
 
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <ErrorBoundary>
+      <Suspense fallback={ <Mosaic color={["#33CCCC", "#33CC36", "#B8CC33", "#FCCA00"]} />} >
+        <RouterProvider router={router} />
+      </Suspense>
+    </ErrorBoundary>
   );
 };
 
