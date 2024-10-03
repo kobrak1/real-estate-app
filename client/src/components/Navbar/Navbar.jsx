@@ -70,10 +70,10 @@ const Navbar = () => {
             <Link to={"#"}>About</Link>
           </li>
           <li>
-            <Link to={"#"}>Contact</Link>
+            <Link to={"/profile"}>Contact</Link>
           </li>
           <li>
-            <Link to={"#"}>Agents</Link>
+            <Link to={"/list"}>Agents</Link>
           </li>
           <li>
             <Link to={"#"}>Login</Link>
