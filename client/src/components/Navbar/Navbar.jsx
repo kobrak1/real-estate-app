@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
         <ul className={opened ? "menu active" : "menu"}>
           <li>
-            <Link to={"#"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <Link to={"#"}>About</Link>
