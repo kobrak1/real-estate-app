@@ -12,7 +12,7 @@ const Navbar = () => {
     { to: "/list", label: "Agents" },
     { to: "#", label: "Login" },
     { to: "#", label: "Register" },
-  ]
+  ];
 
   const renderMenuItems = useMemo(() => (
     menuItems.map(item => (
