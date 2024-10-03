@@ -10,6 +10,8 @@ const Navbar = () => {
     { to: "/", label: "About" },
     { to: "/profile", label: "Contact" },
     { to: "/list", label: "Agents" },
+    { to: "#", label: "Login" },
+    { to: "#", label: "Register" },
   ]
 
   const renderMenuItems = useMemo(() => (
