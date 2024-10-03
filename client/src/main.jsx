@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.scss";
 
 if (!window.Promise) {
-  window.Promise = PromisePolyfill;
+  window.Promise = PromisePolyfill
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
