@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Mosaic } from "react-loading-indicators";
 import Layout from "./pages/layout/layout.jsx";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 
 // Lazy load components
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
@@ -31,6 +32,10 @@ const App = () => {
         {
           path: "/profile",
           element: <ProfilePage />,
+        },
+        {
+          path: "/login",
+          element: <LoginPage />,
         },
       ],
     },
