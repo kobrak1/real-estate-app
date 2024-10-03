@@ -10,8 +10,6 @@ const Navbar = () => {
     { to: "/", label: "About" },
     { to: "/profile", label: "Contact" },
     { to: "/list", label: "Agents" },
-    { to: "#", label: "Login" },
-    { to: "#", label: "Register" },
   ];
 
   const renderMenuItems = useMemo(() => (
@@ -46,7 +44,7 @@ const Navbar = () => {
           </div>
         ) : (
           <span>
-            <Link to={"#"} className="login">
+            <Link to={"/login"} className="login">
               Login
             </Link>
             <Link to={"#"} className="register">
@@ -76,7 +74,7 @@ const Navbar = () => {
             <Link to={"/list"}>Agents</Link>
           </li>
           <li>
-            <Link to={"#"}>Login</Link>
+            <Link to={"/login"}>Login</Link>
           </li>
           <li>
             <Link to={"#"}>Register</Link>
