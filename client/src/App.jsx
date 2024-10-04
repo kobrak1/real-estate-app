@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Mosaic } from "react-loading-indicators";
 import Layout from "./pages/layout/layout.jsx";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
+import FallBackUI from "./components/FallBackUI/FallBackUI.jsx";
 
 // Lazy load components
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={ <Mosaic color={["#33CCCC", "#33CC36", "#B8CC33", "#FCCA00"]} />} >
+      <Suspense fallback={ <FallBackUI /> } >
         <RouterProvider router={router} />
       </Suspense>
     </ErrorBoundary>
