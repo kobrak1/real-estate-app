@@ -12,16 +12,21 @@ const Filter = () => {
   });
   const [titleLocation, setTitleLocation] = useState("Istanbul");
 
-
+  // Handle the change of the filter
   const handleChange = (e) => {
     const {name, value} = e.target
     setFilters(prevFilters => ({ ...prevFilters, [name]: value }))
   }
 
+  // Handle the first letter capitalization
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   return (
     <div className="filter">
       <h1>
-        Search results for <b>{titleLocation}</b>
+        Search results for <b>{capitalize(titleLocation)}</b>
       </h1>
       <div className="top">
         <div className="item">
@@ -30,7 +35,7 @@ const Filter = () => {
             type="text"
             name="location"
             id="location"
-            value={location}
+            value={filters.location}
             onChange={handleChange}
             placeholder="e.g. Istanbul"
           />
@@ -38,8 +43,12 @@ const Filter = () => {
       </div>
       <div className="bottom">
         <div className="item">
-          <label htmlFor="type">Location</label>
-          <select name="type" id="type">
+          <label htmlFor="type">Type</label>
+          <select 
+            name="transactionType" 
+            id="transactionType"
+            onChange={handleChange}
+          >
             <option value={""}>any</option>
             <option value={"buy"}>buy</option>
             <option value={"rent"}>rent</option>
@@ -47,7 +56,11 @@ const Filter = () => {
         </div>
         <div className="item">
           <label htmlFor="property">Property</label>
-          <select name="property" id="property">
+          <select 
+            name="propertyType" 
+            id="propertyType"
+            onChange={handleChange}
+          >
             <option value="">any</option>
             <option value="apartment">Apartment</option>
             <option value="house">House</option>
@@ -79,9 +92,16 @@ const Filter = () => {
         </div>
         <div className="item">
           <label htmlFor="bedroom">Bedroom</label>
-          <input type="text" id="bedroom" name="bedroom" placeholder="any" />
+          <input 
+            type="number" 
+            id="bedroom" 
+            name="bedroom" 
+            value={filters.bedroom}
+            onChange={handleChange}
+            placeholder="any" 
+          />
         </div>
-        <button onClick={() => console.log('Search button has been clicked.')}>
+        <button onClick={() => setTitleLocation(filters.location)}>
           <img src="/search.png" alt="search" />
         </button>
       </div>
