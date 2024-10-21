@@ -1,21 +1,10 @@
-const http = require("http");
+const app = require("./app");
+const config = require("./utils/config");
 
-http
-  .createServer((req, res) => {
-    res.writeHead(
-      200,
-      { "Content-Type": "text/html" },
-      { "Access-Control-Allow-Origin": "*" },
-      { "Access-Control-Allow-Methods": "GET" },
-      { "Access-Control-Allow-Headers": "Content-Type" },
-      { "Access-Control-Max-Age": "3600" },
-      { "Access-Control-Allow-Credentials": true },
-    ),
-      res.end(`
-      <script>
-        console.log('JavaScript code is running!');
-        alert('JavaScript code is running!');
-      </script>
-      `);
-  })
-  .listen(3000);
+const startServer = async () => {
+  const chalkModule = await import('chalk');
+  const chalk = chalkModule.default;
+  console.log(`[${chalk.blue(new Date().toISOString())}] Server running in ${chalk.green(process.env.NODE_ENV || 'development')} mode on port ${chalk.red(config.port)}`);
+};
+
+app.listen(config.port, startServer);
