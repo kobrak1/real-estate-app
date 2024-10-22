@@ -1,8 +1,10 @@
-const bcrypt = require("bcrypt")
-const prisma = require("../../lib/prisma")
-const tokenGenerator = require("../../utils/tokenGenerator")
+import { Request, Response, NextFunction } from "express";
+import bcrypt from "bcrypt";
+import prisma from "../../lib/prisma"
+import tokenGenerator from "../../utils/tokenGenerator"
 
-async function register(req, res,next) {
+// Register controller
+async function register(req: Request, res: Response, next: NextFunction): Promise<void> {
     const { username, email, password } = req.body
 
     try {
@@ -10,7 +12,10 @@ async function register(req, res,next) {
         const existingUser = await prisma.user.findUnique({
             where: { email }
         })
-        if (existingUser) return res.status(400).send("email already in use")
+        if (existingUser) {
+            res.status(400).send("email already in use")
+            return;
+        }
         
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10)
@@ -27,17 +32,22 @@ async function register(req, res,next) {
             },
             // include: { posts: true // includes posts of this user }
         })
-    
-        console.log(newUser)
-        res.status(201).json({ user: `${newUser.username} created successfully` })
+
+        const resObject = { 
+            user: { id: newUser.id, username: newUser.username }, 
+            message: "user created successfully" 
+        }
+
+        res.status(201).json(resObject)
     } catch (error) {
         console.error("failed to register:", error)
-        res.status(500).send("Internal server error (registration)")
+        next(error)
     }
 
 }
 
-async function login(req, res, next) {
+// Login controller
+async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
     const { email, password } = req.body
 
     try {
@@ -46,11 +56,17 @@ async function login(req, res, next) {
             where: { email }
         })
 
-        if (!user) return res.status(400).send("Invalid credentials")
+        if (!user) {
+            res.status(400).send("Invalid credentials")
+            return;
+        }
 
         // Check if the password is correct
         const isValidPassword = await bcrypt.compare(password, user.password)
-        if (!isValidPassword) return res.status(400).send("Invalid credentials")
+        if (!isValidPassword) {
+            res.status(400).send("Invalid credentials")
+            return;
+        }
 
         // Generate a cookie token and send it to user
         const age = 1000 * 60 * 60
@@ -68,11 +84,12 @@ async function login(req, res, next) {
         res.status(200).json({ message: `${user.username} successfully logged in` })
     } catch(error) {
         console.error("Login failed:", error)
-        res.status(500).send("Internal server error (login)")
+        next(error)
     }
 }
 
-async function logout(req, res, next) {
+// Logout Controller
+async function logout(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {        
         res
           .clearCookie("token")
@@ -80,11 +97,11 @@ async function logout(req, res, next) {
           .send("User logged out successfully")
     } catch (error) {
         console.error("Failed to logout:", error)
-        res.status(500).send("Internal server error (logout)")
+        next(error)
     }
 }
 
-module.exports = { 
+export = { 
     register,
     login,
     logout
