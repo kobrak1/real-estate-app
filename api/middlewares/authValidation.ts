@@ -57,7 +57,7 @@ const validateLogin: ValidationMiddleware[] = [
   },
 ];
 
-export =  {
+export  {
     validateLogin,
     validateRegister
 }

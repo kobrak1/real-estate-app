@@ -101,7 +101,7 @@ async function logout(req: Request, res: Response, next: NextFunction): Promise<
     }
 }
 
-export = { 
+export { 
     register,
     login,
     logout
