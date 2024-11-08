@@ -109,5 +109,6 @@ async function logout(req: Request, res: Response, next: NextFunction): Promise<
 export { 
     register,
     login,
-    logout
+    logout,
+    test
 }
