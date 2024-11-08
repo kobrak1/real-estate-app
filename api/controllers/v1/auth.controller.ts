@@ -3,6 +3,11 @@ import bcrypt from "bcrypt";
 import prisma from "../../lib/prisma"
 import tokenGenerator from "../../utils/tokenGenerator"
 
+// Test func
+async function test(req: Request, res: Response) {
+    res.status(200).send("Welcome back to my channel")
+}
+
 // Register controller
 async function register(req: Request, res: Response, next: NextFunction): Promise<void> {
     const { username, email, password } = req.body
