@@ -4,7 +4,7 @@ import { unknownEndpoint, errorHandler } from "./middlewares/errorHandler"
 import { reqLogger } from "./middlewares/requestLogger"
 
 // Routers
-import authRouterV1 from "./routers/v1/auth.route"
+import authRouterV1 from "./routes/v1/auth.route"
 
 const app: Express = express()
 
