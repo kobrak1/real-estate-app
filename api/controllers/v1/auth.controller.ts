@@ -81,7 +81,7 @@ async function login(req: Request, res: Response, next: NextFunction): Promise<v
         res.cookie("token", token, {
             maxAge: age,
             httpOnly: true,
-            sameSite: 'strict',
+            sameSite: 'none',
             secure: process.env.NODE_ENV === "production" 
         })
         
