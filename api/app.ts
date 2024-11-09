@@ -2,7 +2,6 @@ import express, { Express } from "express"
 import cors from "cors";
 import { unknownEndpoint, errorHandler } from "./middlewares/errorHandler"
 import { reqLogger } from "./middlewares/requestLogger"
-import { allowedOrigin } from "./utils/config"
 
 // Routers
 import authRouterV1 from "./routes/v1/auth.route"
