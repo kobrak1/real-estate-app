@@ -1,3 +1,5 @@
+@import "../../styles/variables/auth_page_variables.scss";
+
 .login-container {
     display: flex;
     align-items: center;
@@ -10,19 +12,38 @@
       max-width: 400px;
       text-align: center;
       border-radius: 8px;
+      background-color: rgb(255, 255, 255, .3);
+      backdrop-filter: blur(15px);
   
       .login-title {
         font-size: 2rem;
         margin-bottom: 1rem;
-        color: #333;
+        color: #000000;
       }
   
       .login-field {
         margin-bottom: 1.5rem;
+      
+        .MuiInputBase-input {
+          font-size: 1.4rem;
+        }
+      
+        .MuiInputLabel-root {
+          font-size: 1.2rem;
+        }
+
+        .MuiInputLabel-shrink {
+          font-size: 1.2rem;
+        }
+
+        .MuiFormHelperText-root {
+          font-size: 1.1rem;
+          color: #950707;
+        }
       }
   
       .login-button {
-        background-color: #1976d2;
+        background-color: $login-button;
         color: #fff;
         padding: 0.75rem;
         margin-bottom: 1.5rem;
@@ -30,18 +51,23 @@
         font-size: 1.2rem;
   
         &:hover {
-          background-color: #115293;
+          background-color: $login-button-hover;
         }
       }
 
       .login-navigator {
         font-size: 1.2rem;
+        color: rgb(0, 0, 0);
 
         .link {
           margin-right: .3rem;
           text-decoration: underline;
           font-weight: bold;
-          color: #c15325;
+          color: rgb(0, 0, 0, .5);
+
+          &:hover {
+            color: rgb(0, 0, 0);
+          }
         }
       }
     }
