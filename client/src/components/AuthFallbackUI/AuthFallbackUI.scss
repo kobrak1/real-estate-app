@@ -1,0 +1,30 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    color: #f7f4f4;
+  
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+    }
+  
+    p {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+    }
+  
+    .auth-login-link {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      color: #ffffff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
