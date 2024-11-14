@@ -1,0 +1,68 @@
+@import "../../styles/variables/auth_page_variables.scss";
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  
+    .login-paper {
+      padding: 4rem;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+  
+      .login-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: $login-button;
+      }
+  
+      .login-field {
+        margin-bottom: 1.5rem;
+      
+        .MuiInputBase-input {
+          font-size: 1.4rem;
+        }
+      
+        .MuiInputLabel-root {
+          font-size: 1.2rem;
+        }
+
+        .MuiInputLabel-shrink {
+          font-size: 1.2rem;
+        }
+
+        .MuiFormHelperText-root {
+          font-size: 1.1rem;
+        }
+      }
+      
+  
+      .login-button {
+        background-color: $login-button;
+        color: #fff;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+        font-size: 1.2rem;
+  
+        &:hover {
+          background-color: $login-button-hover;
+        }
+      }
+
+      .login-navigator {
+        font-size: 1.2rem;
+
+        .link {
+          margin-right: .3rem;
+          text-decoration: underline;
+          font-weight: bold;
+          color: #c15325;
+        }
+      }
+    }
+  }
+  

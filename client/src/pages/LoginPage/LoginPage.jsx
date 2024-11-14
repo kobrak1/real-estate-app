@@ -1,44 +1,81 @@
 import React, { useState } from 'react';
-import { login } from "../../services/authService"
+import { Link } from 'react-router-dom';
+import { Box, Button, TextField, Typography, Container, Paper } from '@mui/material';
+import { login } from "../../services/authService";
+
+// Style
 import './LoginPage.scss';
 
-function LoginPage() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const LoginPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState({ email: false, password: false });
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // Handle login logic here
-        const res = await login({ email, password })
-        console.log(res);
-    };
+  const handleLogin = (e) => {
+    e.preventDefault();
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = emailRegex.test(email);
+    const isPasswordValid = password.length >= 6;
+  
+    setError({
+      email: !isEmailValid,
+      password: !isPasswordValid,
+    });
+  
+    if (!isEmailValid || !isPasswordValid) return;
+  
+    console.log('Logging in with:', { email, password });
+  };
+  
 
-    return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input 
-                        type="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    );
-}
+  return (
+    <Container component="main" maxWidth="xs" className="login-container">
+      <Paper elevation={3} className="login-paper">
+        <Typography variant="h5" className="login-title">
+          Login
+        </Typography>
+        <Box component="form" onSubmit={handleLogin} noValidate>
+          <TextField
+            label="Email Address"
+            variant="outlined"
+            required
+            fullWidth
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={error.email}
+            helperText={error.email ? "Please enter a valid email address" : ""}
+            className="login-field"
+          />
+          <TextField
+            label="Password"
+            variant="outlined"
+            required
+            fullWidth
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            error={error.password}
+            helperText={error.password ? "Password must be at least 6 characters" : ""}
+            className="login-field"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            className="login-button"
+          >
+            Login
+          </Button>
+          <span className='login-navigator'>
+            <Link className='link' to={"/auth/register"}>Register</Link> if you don't have an account.
+          </span>
+        </Box>
+      </Paper>
+    </Container>
+  );
+};
 
 export default LoginPage;
