@@ -26,12 +26,7 @@ const LoginPage = () => {
   
     if (!isEmailValid || !isPasswordValid) return;
 
-    // send a login request to the server
-    
-    res && navigate("/")
-  
-    console.log('Logging in with:', res.data.message);
-
+    // Send a request with the validated credentials
     try {
       const res = await login({ email, password })
 
