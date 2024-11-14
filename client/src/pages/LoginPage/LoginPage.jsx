@@ -11,7 +11,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState({ email: false, password: false });
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
   
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,8 +24,11 @@ const LoginPage = () => {
     });
   
     if (!isEmailValid || !isPasswordValid) return;
+
+    // send a login request to the server
+    const res = await login({ email, password })
   
-    console.log('Logging in with:', { email, password });
+    console.log('Logging in with:', res.data.message);
   };
   
 
