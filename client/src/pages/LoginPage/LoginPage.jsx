@@ -30,7 +30,7 @@ const LoginPage = () => {
     try {
       const res = await login({ email, password })
 
-      res?.data?.success 
+      res?.status === "200"
         ? navigate("/")
         : console.log('Login failed:', res?.data?.message || 'Unexpected error!')
     } catch (error) {
