@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, Button, TextField, Typography, Container, Paper } from '@mui/material';
 import { login } from "../../services/authService";
 
@@ -10,6 +10,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState({ email: false, password: false });
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,9 +27,20 @@ const LoginPage = () => {
     if (!isEmailValid || !isPasswordValid) return;
 
     // send a login request to the server
-    const res = await login({ email, password })
+    
+    res && navigate("/")
   
     console.log('Logging in with:', res.data.message);
+
+    try {
+      const res = await login({ email, password })
+
+      res?.data?.success 
+        ? navigate("/")
+        : console.log('Login failed:', res?.data?.message || 'Unexpected error!')
+    } catch (error) {
+      console.error('Error logging in:', error)
+    }
   };
   
 
