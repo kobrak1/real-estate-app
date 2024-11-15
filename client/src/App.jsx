@@ -2,17 +2,19 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MainLayout } from "./pages/layout/mainLayout/mainLayout.jsx";
 import { AuthLayout } from "./pages/layout/authLayout/authLayout.jsx"
+
+// Directly leaded compoenents
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
 import FallBackUI from "./components/FallBackUI/FallBackUI.jsx";
 import AuthFallbackUI from "./components/AuthFallbackUI/AuthFallbackUI.jsx"
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 
 // Lazy load components
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const SinglePage = lazy(() => import("./pages/SinglePage/SinglePage.jsx"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage/ProfilePage.jsx"));
 const ListPage = lazy(() => import("./pages/ListPage/ListPage.jsx"));
-const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage.jsx"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage.jsx"))
 
 const App = () => {
   const router = createBrowserRouter([
