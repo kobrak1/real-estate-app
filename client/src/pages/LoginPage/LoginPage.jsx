@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box, Button, TextField, Typography, Container, Paper } from '@mui/material';
-import { login } from "../../services/authService";
+import { useLogin } from "../../hooks/useLogin"
 
 // Style
 import './LoginPage.scss';
@@ -9,35 +9,13 @@ import './LoginPage.scss';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState({ email: false, password: false });
   const navigate = useNavigate()
+  const { handleLogin, loading, error } = useLogin(navigate)
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-  
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmailValid = emailRegex.test(email);
-    const isPasswordValid = password.length >= 6;
-  
-    setError({
-      email: !isEmailValid,
-      password: !isPasswordValid,
-    });
-  
-    if (!isEmailValid || !isPasswordValid) return;
-
-    // Send a request with the validated credentials
-    try {
-      const res = await login({ email, password })
-
-      res?.status === 200
-        ? navigate("/")
-        : console.log('Login failed:', res?.data?.message || 'Unexpected error!')
-    } catch (error) {
-      console.error('Error logging in:', error)
-    }
-  };
-  
+  const onSubmit = (event) => {
+    event.preventDefault();
+    handleLogin(email, password);
+  }
 
   return (
     <Container component="main" maxWidth="xs" className="login-container">
@@ -45,7 +23,7 @@ const LoginPage = () => {
         <Typography variant="h5" className="login-title">
           Login
         </Typography>
-        <Box component="form" onSubmit={handleLogin} noValidate>
+        <Box component="form" onSubmit={onSubmit} noValidate>
           <TextField
             label="Email Address"
             variant="outlined"
@@ -77,7 +55,7 @@ const LoginPage = () => {
             variant="contained"
             className="login-button"
           >
-            Login
+            {loading ? "Logging in" : "Login"}
           </Button>
           <span className='login-navigator'>
             <Link className='link' to={"/auth/register"}>Register</Link> if you don't have an account.
