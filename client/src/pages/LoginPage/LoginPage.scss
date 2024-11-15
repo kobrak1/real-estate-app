@@ -54,6 +54,11 @@
         &:hover {
           background-color: $login-button-hover;
         }
+
+        .loading {
+          cursor: none;
+          background-color: $login-button-light;
+        }
       }
 
       .login-navigator {

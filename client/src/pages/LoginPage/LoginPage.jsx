@@ -53,9 +53,10 @@ const LoginPage = () => {
             type="submit"
             fullWidth
             variant="contained"
-            className="login-button"
+            disabled={loading}
+            className={`login-button ${loading ? "loading" : ""}`}
           >
-            {loading ? "Logging in" : "Login"}
+            {loading ? "Logging in..." : "Login"}
           </Button>
           <span className='login-navigator'>
             <Link className='link' to={"/auth/register"}>Register</Link> if you don't have an account.
